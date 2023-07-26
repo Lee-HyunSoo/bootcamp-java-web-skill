@@ -22,7 +22,6 @@ public class InputServlet extends HttpServlet {
         super();
     }
 
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
@@ -35,7 +34,7 @@ public class InputServlet extends HttpServlet {
 //		Enumeration<String> subs = request.getParameterNames();
 //		for (; subs.hasMoreElements();)
 //			System.out.println(subs.nextElement());
-//		
+		
 //		while (subs.hasMoreElements()) {
 //			System.out.println(subs.nextElement());
 //		}
