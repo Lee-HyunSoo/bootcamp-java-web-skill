@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 가입 창 : memberForm.html</title>
+</head>
+<body>
+	<form action="member" method="post">
+		<table>
+		  <tr>
+		    <th>회원 가입 창</th>
+		  </tr>
+		  <tr>
+		    <td>아이디</td>
+		    <td><input type="text" name="id" required="required"></td>
+		  </tr>
+		  <tr>
+		    <td>비밀번호</td>
+		    <td><input type="password" name="pwd" required="required"></td>
+		  </tr>
+		  <tr>
+		    <td>이름</td>
+		    <td><input type="text" name="name" required="required"></td>
+		  </tr>
+		  <tr>
+		    <td>이메일</td>
+		    <td><input type="text" name="email" required="required"></td>
+		  </tr>
+		</table>
+		
+		<input type="submit" value="가입하기">
+		<input type="reset" value="취소">
+		<input type="hidden" name="command" value="addMember">
+	</form>
+</body>
+</html>
