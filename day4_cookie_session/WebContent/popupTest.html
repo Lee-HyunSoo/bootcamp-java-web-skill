@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = pageLoad;
+	
+	function pageLoad() {
+		notShowPop = getCookieValue();
+		if (notShowPop != "true") {
+			window.open("popUp.html", "pop", "width=400, height=500, history=no, resizable=no, status=no, scrollbars=yes, menubar=no");
+			// 어떤html로갈지, 팝업이름, 가로길이, 세로길이, 뒤로가기앞으로가기 no, 팝업크기조절 no, 상태바 no, 스크롤바 yes, 메뉴바 x
+		}
+	}
+	
+	function getCookieValue() {
+		var result = "false";
+		if (document.cookie != "") {
+			cookie = document.cookie.split(";"); // "notShowPop=false;notShowPop1=false;"
+			for (var i = 0; i < cookie.length; i++) { 
+				element = cookie[i].split("="); // "notShowPop=false"
+				value = element[0];
+				value = value.replace(/^\s*/, ''); // "notShowPop " 같이 코드에 따라 공백이 섞여있을 수 있기 때문에 정규식으로 공백제거 
+				if (value == "notShowPop") {
+					result = element[1];
+				}
+			}
+		}
+		return result;
+	}
+	
+	function deleteCookie() {
+		document.cookie = "notShowPop=" + "false" + ";path=/; expires=-1";
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type="button" value="쿠키삭제" onclick="deleteCookie()">
+	</form>
+</body>
+</html>
