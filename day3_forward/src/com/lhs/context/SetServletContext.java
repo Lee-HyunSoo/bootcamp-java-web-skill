@@ -26,8 +26,8 @@ public class SetServletContext extends HttpServlet {
 		 * 2. ArrayList에 이름과 나이를 저장
 		 * 3. 다시 ServletContext 객체에 setAttribute() 를 이용해 바인딩
 		 */
-		
 		ServletContext context = getServletContext();
+		
 		/*
 		 * ArrayList는 타입을 지정해주지 않아도 넣으면 다 들어간다.
 		 * 다만, add 시 값이 그대로 들어가는게 아니라 Object로 감싸져서 들어간다.

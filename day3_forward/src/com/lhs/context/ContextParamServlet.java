@@ -24,7 +24,6 @@ public class ContextParamServlet extends HttpServlet {
 		 * 2. getInitParamenter() 의 인자로 각각의 메뉴 이름을 전달 한 후
 		 * 3. 메뉴 항목들을 가져와 이를 브라우저로 출력
 		 */
-		
 		// web.xml 내의 <context-param></context-param> 를 가져오기 위해
 		ServletContext context = getServletContext();
 		out.print("<html><body>");
