@@ -3,9 +3,11 @@ package com.lhs.listener;
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionBindingListener;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
 
 @WebListener
-public class LoginImpl implements HttpSessionBindingListener {
+public class LoginImpl implements HttpSessionListener {
 
 	String id;
 	String pw;
@@ -20,17 +22,15 @@ public class LoginImpl implements HttpSessionBindingListener {
 	}
 
 	@Override
-	public void valueBound(HttpSessionBindingEvent event) {
-		System.out.println("사용자 접속");
+	public void sessionCreated(HttpSessionEvent se) {
+		System.out.println("세션 생성");
 		++total;
 	}
 
-
 	@Override
-	public void valueUnbound(HttpSessionBindingEvent event) {
-		System.out.println("사용자 접속 해제");
+	public void sessionDestroyed(HttpSessionEvent se) {
+		System.out.println("세션 소멸");
 		total--;
 	}
-	
 
 }
