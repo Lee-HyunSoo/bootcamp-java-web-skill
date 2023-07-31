@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘러먼트 셀렉터 연습</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript"> 
+ function addImage(){
+	// 태그의 class가 없다면 태그 자체로도 jquery를 사용할 수 있다.
+	$("div").html("<img src='../image/duke.png'>");
+	$("#id1").html("<img src='../image/duke2.png'>");
+	$(".c1").html("<img src='../image/image1.jpg'>");
+ }
+</script>
+</head>
+<body>
+	<div></div>
+	<div id="id1"></div>
+	<div class="c1"></div>
+	<input type="button" value="이미지 추가하기" onClick="addImage()" />
+</body>
+</html>

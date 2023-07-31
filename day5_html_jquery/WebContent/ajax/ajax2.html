@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>도서 정보 출력창</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+      function fn_process(){
+        $.ajax({
+            type:"post",
+            async:false, 
+            url:"http://localhost:9000/day5_html_jquery/ajaxTest2",
+            dataType:"xml",
+            
+            success: function(info, textStatus) {
+            	$('#bookInfo').text(''); // append를 하게 되면 기존 데이터에 계속 추가하기 때문에, 도서정보요청 버튼을 눌렀을 때 페이지 초기화 후 추가
+              	$(info).find("book").each(function() { // each = foreach
+	          		var title = $(this).find("title").text(); // this = 들어온 데이터
+	             	var writer = $(this).find("writer").text();
+	              	var image = $(this).find("image").text();
+	              	$("#bookInfo").append(
+	                	  	"<p>" + title + "</p>" + "<p>" + writer + "</p>" + "<img src=" + image + "   />"				
+	              	);
+              	});
+            },
+            error: function(data, textStatus){
+               alert("에러가 발생했습니다.");
+            },
+            complete: function(data, textStatus){
+//                alert("작업을 완료 했습니다.");
+            }
+       }); 
+     }
+  </script>
+</head>
+<body>
+	<div id="bookInfo"></div>
+	<input type=button value="도서정보 요청" onclick="fn_process()">
+</body>
+</html>

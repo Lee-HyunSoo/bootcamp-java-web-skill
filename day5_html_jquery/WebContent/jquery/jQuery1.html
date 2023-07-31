@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ID 셀렉터 연습1</title>
+<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+<script type="text/javascript"> 
+	/*
+		1. 페이지 로드 시 $("#unique2") 는 # 다음에 오는 id가 unique2인 태그를 웹 페이지에서
+		2. id에 해당하는 태그 (객체) 를 얻은 후,
+		3. 제이쿼리의 html() 메서드를 호출해 태그의 값을 추출
+	*/
+
+	$(document).ready(function() {				
+	  alert($("#unique3").html());	
+	});
+</script>
+
+</head>
+<body>
+	<div class="class1">안녕하세요.</div>
+	<div id="unique2"><b>제이쿼리</b>입니다!!</div>
+	<div id="unique3">
+		<p>제이쿼리는 아주 쉽습니다!!!</p>
+	</div>
+</body>
+</html>

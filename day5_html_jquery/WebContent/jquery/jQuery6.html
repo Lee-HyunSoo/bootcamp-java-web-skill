@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.silver{ background-color: silver; }
+</style>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		$(':password').addClass('silver'); // type이 password 인 애한테 스타일 추가
+		
+		$('#txtPassword').keyup(function() {
+// 			$('#labelError').remove(); // 제거
+			$('#lableError').text(''); // 제거가 아니라 클리어
+		})
+		
+		$('#txtPasswordConfirm').keyup(function() {
+			if ($("#txtPassword").val() != $("#txtPasswordConfirm").val()) {
+				$('#lableError').text('');
+				$("#labelError").html("<b>암호가 틀립니다.</b>");
+			}
+			else {
+				$('#lableError').text(''); 
+				$("#labelError").text("<b>암호가 맞습니다.</b>");
+			}
+		})
+		
+	});
+
+</script>
+
+
+</head>
+<body>
+	<table style="border: 1px solid skyblue;">
+		<tr>
+			<td>암호 : </td>
+			<td><input type="password" id="txtPassword" size="20"></td>
+		</tr>
+		<tr>
+			<td>암호확인 : </td>
+			<td><input type="password" id="txtPasswordConfirm" size="20"></td>
+		</tr>
+	</table>
+
+	<div id="labelError">암호를 입력하시오.</div>
+
+</body>
+</html>
