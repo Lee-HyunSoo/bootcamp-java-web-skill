@@ -41,13 +41,11 @@ public class FileDownload extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		
 		String fileName = (String) request.getParameter("fileName"); // 파일명.확장자
-		String downFile = "C:\\file_repo\\" + fileName; // 어디에 업로드 되어있는 파일인지
-		
-
 		/* 실제 다운로드 가능하도록 설정 : 라이브러리마다 다르다. */
 		response.setHeader("Cache-Control", "no-cache"); 
 		response.addHeader("Content-disposition", "attachment; fileName=" + fileName);
 
+		String downFile = "C:\\file_repo\\" + fileName; // 어디에 업로드 되어있는 파일인지
 		File file = new File(downFile);
 		FileInputStream in = new FileInputStream(file); // 파일을 스트림 방식으로 읽기 위한 객체 생성
 		OutputStream out = response.getOutputStream(); // 브라우저로 출력하기 위한 OutputStream
