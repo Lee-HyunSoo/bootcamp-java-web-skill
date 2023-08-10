@@ -41,8 +41,8 @@ public class BoardService {
 		List<ArticleVO> articles = boardDAO.selectAllArticles(pagingMap); // section 1에서 1페이지에 해당하는 글들
 		int totArticles = boardDAO.selectTotArticles();
 		articlesMap.put("articles", articles);
-		articlesMap.put("totArticles", totArticles);
-//		articlesMap.put("totArticles", 170);
+//		articlesMap.put("totArticles", totArticles);
+		articlesMap.put("totArticles", 170);
 
 		return articlesMap;
 	}
